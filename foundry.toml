@@ -13,3 +13,11 @@ fs_permissions = [
     { access = "read", path = "./reports" },
 ]
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+# Add this section to ignore specific contracts for size checks
+[profile.default.sizes]
+# List contracts to exclude from size limit checks
+# These are usually your mock contracts that are not deployed to mainnet/testnet
+exclude = [
+    "VRFCoordinatorV2_5Mock",
+    "LinkToken",
+] # Add any other mocks that might exceed the limit
